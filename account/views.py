@@ -27,3 +27,8 @@ def user_login(request):
 @login_required
 def index(request):
     return render(request, "account/home.html")
+
+
+@login_required
+def test_view(request):
+    return HttpResponse("Test was successful.")
