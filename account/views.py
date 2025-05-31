@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
-
+from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
 
 
-# Create your views here.
 def user_login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -23,3 +22,8 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, "account/login.html", {"form": form})
+
+
+@login_required
+def index(request):
+    return render(request, "account/home.html")
