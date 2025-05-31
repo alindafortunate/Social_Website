@@ -32,3 +32,8 @@ def index(request):
 @login_required
 def test_view(request):
     return HttpResponse("Test was successful.")
+
+
+@login_required
+def dashboard(request):
+    return render(request, "account/dashboard.html", {"section": "dashboard"})
