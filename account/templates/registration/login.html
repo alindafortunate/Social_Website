@@ -11,7 +11,7 @@
     <form action="{% url 'login' %}" method="post">
         {{form.as_p}}
         {% csrf_token %}
-        <input type="hidden" name="next" value="{{next}}">
+        
         <input type="submit" value="Login">
     </form>
 </div>
