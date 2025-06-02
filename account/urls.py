@@ -4,13 +4,12 @@ from django.contrib.auth import views as auth_views
 from .views import index, test_view, dashboard
 
 urlpatterns = [
-    path("", dashboard, name="dashboard"),
     path("home/", index, name="home"),
     path("test/", test_view, name="test"),
+    path("", dashboard, name="dashboard"),
     path(
         "", include("django.contrib.auth.urls")
     ),  # This code represents the below lines about authentication
-    
     # path("login/", auth_views.LoginView.as_view(), name="login"),
     # path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     # path(
