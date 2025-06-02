@@ -12,6 +12,39 @@
 <body>
     <div id="header">
         <span class="logo"> Social Website</span>
+
+        {% if request.user.is_authenticated %}
+
+        <ul class="menu">
+            <li {% if section == 'dashboard' %} class="selected" {% endif %}>
+                <a href="{% url 'dashboard' %}">My Dashboard</a>
+            </li>
+            <li {% if section == 'images' %} class="selected" {% endif %}>
+                <a href="#">Images</a>
+            </li>
+            <li {% if section == 'people' %} class="selected" {% endif %}>
+                <a href="#">People</a>
+            </li>
+        </ul>
+        {% endif %}
+
+        <span class="user">
+            {% if request.user.is_authenticated %}
+
+            Hello {{request.user.get_short_name | default:request.user.get_username}},
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </span>
+
+        {% else %}
+
+        <span class="user">
+            <a href="{% url 'login' %}">Login</a>
+        </span>
+        {% endif %}
+
     </div>
     <div id="content">
         {% block content %}

@@ -36,5 +36,4 @@ def test_view(request):
 
 @login_required
 def dashboard(request):
-    print(request.user.get_username())
     return render(request, "account/dashboard.html", {"section": "dashboard"})
