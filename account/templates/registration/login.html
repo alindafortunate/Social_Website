@@ -8,11 +8,12 @@
 
 <div class="login-form">
     <form action="{% url 'login' %}" method="post">
-        {{form.as_p}}
+        <strong> {{form.as_p}} </strong>
         {% csrf_token %}
         <input type="hidden" name="next" value="{{next}}">
         <input type="submit" value="Login">
     </form>
+    <p><a href="{% url 'password_reset' %}">Forgotten Password?</a></p>
 </div>
 
 {% endblock content %}
