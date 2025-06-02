@@ -6,10 +6,10 @@
 {% block content %}
 <h1>Welcome to our social website.</h1>
 <p>Soon you will enjoy interesting content.</p>
+<p>Hello, {{request.user.username}}</p>
 
 <p>
 <form action="{% url 'logout' %}" method="post">
-    {{form.as_p}}
     {% csrf_token %}
     <input type="submit" value="logout">
 </form>
