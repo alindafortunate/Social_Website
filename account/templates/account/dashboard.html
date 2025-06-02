@@ -8,7 +8,6 @@
 <p>Welcome to your dashboard.</p>
 
 <form action="{% url 'logout' %}" method="post">
-    {{form.as_p}}
     {% csrf_token %}
     <input type="submit" value="Logout">
 </form>
