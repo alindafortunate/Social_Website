@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from .models import Profile
 from django import forms
 
 
@@ -25,3 +26,15 @@ class UserRegistrationForm(forms.ModelForm):
         return cd["password2"]
 
     # The above method will be executed upon calling is_valid() method.
+
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ["first_name", "last_name", "email"]
+
+
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ["date_of_birth", "location", "photo"]
