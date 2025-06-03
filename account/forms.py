@@ -14,3 +14,14 @@ class UserRegistrationForm(forms.ModelForm):
     class Meta:
         model = get_user_model()
         fields = ["username", "first_name", "last_name", "email"]
+
+    # Checking if passwords match.
+    def clean_password2(self):
+        cd = self.cleaned_data
+        if cd["password"] != cd["password2"]:
+            raise forms.ValidationError(
+                "Passwords do not match, please ensure that they are mathcing."
+            )
+        return cd["password2"]
+
+    # The above method will be executed upon calling is_valid() method.
