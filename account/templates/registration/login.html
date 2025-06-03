@@ -5,7 +5,7 @@
 
 {% block content %}
 <h1>Login</h1>
-
+<p>If you don't have an account, <a href="{% url 'register' %}">Register Here</a>.</p>
 <div class="login-form">
     <form action="{% url 'login' %}" method="post">
         <strong> {{form.as_p}} </strong>
