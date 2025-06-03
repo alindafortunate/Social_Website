@@ -9,7 +9,7 @@
 <p>Please sign up here to create your account.</p>
 <form method="post">
     {% csrf_token %}
-    {{user_form.as_p}}
+    <strong>{{user_form.as_p}}</strong>
     <input type="submit" value="Create Your Account">
 </form>
 {% endblock content %}
