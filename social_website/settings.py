@@ -132,3 +132,7 @@ LOGOUT_URL = "logout"
 # LOGOUT_REDIRECT_URL = "logout" # Works the same way as LOGOUT_URL
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Serving media file.
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
