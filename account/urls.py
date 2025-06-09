@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
-from .views import index, test_view, dashboard, register
+from .views import index, test_view, dashboard, register, edit
 
 urlpatterns = [
     path("home/", index, name="home"),
@@ -41,4 +41,5 @@ urlpatterns = [
     #     name="password_reset_complete",
     # ),
     path("register/", register, name="register"),
+    path("edit/", edit, name="edit"),
 ]
