@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, UserRegistrationForm
+from .models import Profile
 
 
 def user_login(request):
@@ -49,6 +50,7 @@ def register(request):
             new_user.set_password(user_form.cleaned_data["password"])
             # Then save it to the database.
             new_user.save()
+            Profile.objects.create(user=new_user)
             return render(request, "account/register_done.html", {"new_user": new_user})
     else:
         user_form = UserRegistrationForm()
