@@ -55,3 +55,8 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, "account/register.html", {"user_form": user_form})
+
+
+@login_required
+def edit(request):
+    pass
