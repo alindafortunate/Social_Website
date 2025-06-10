@@ -52,9 +52,17 @@ def register(request):
             # Then save it to the database.
             new_user.save()
             Profile.objects.create(user=new_user)
+            messages.success(request, "Account creation was successful.")
             return render(request, "account/register_done.html", {"new_user": new_user})
+
+        else:
+            messages.error(
+                request,
+                "Error, account creation was not successful please cross check the fields.",
+            )
     else:
         user_form = UserRegistrationForm()
+
     return render(request, "account/register.html", {"user_form": user_form})
 
 
@@ -71,7 +79,7 @@ def edit(request):
             messages.success(request, "User Profile Update was successful, thank you.")
         else:
             messages.error(
-                request, "Invalid, User Profile Update failed, cross check the fields."
+                request, "Error, User Profile Update failed, cross check the fields."
             )
     else:
         user_form = UserEditForm(instance=request.user)
