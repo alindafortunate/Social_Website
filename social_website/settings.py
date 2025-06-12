@@ -155,3 +155,9 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 
 SITE_ID = 1
+
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "account.authentication.EmailAuthBackend",
+]

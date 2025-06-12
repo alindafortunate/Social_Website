@@ -10,7 +10,7 @@ class EmailAuthBackend:
             if user.check_password(password):
                 return user
             return None
-        except (user.DoesNotExist, user.MultipleObjectsReturned):
+        except (User.DoesNotExist, User.MultipleObjectsReturned):
             return None
 
     def get_user(self, user_id):
