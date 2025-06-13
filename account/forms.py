@@ -26,12 +26,7 @@ class UserRegistrationForm(forms.ModelForm):
         return cd["password2"]
 
     # The above method will be executed upon calling is_valid() method.
-    def clean_email(self):
-        data = self.cleaned_data["email"]
-        if get_user_model().objects.filter(email=data).exists():
-            raise forms.ValidationError("Email already in use.")
-        return data
-
+    
 
 class UserEditForm(forms.ModelForm):
     class Meta:
