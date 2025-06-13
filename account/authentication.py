@@ -5,5 +5,5 @@ class EmailAuthBackend:
     def authenticate(self, request, username=None,password=None):
         pass
 
-    def get_user(self):
+    def get_user(self, user_id):
         pass
