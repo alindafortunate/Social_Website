@@ -93,3 +93,4 @@ def edit(request):
 # On this very day I chose to surrender more to the Lord Jesus and His supreme authority over my life.
 
 # On this day, I was caught up with Building Tomorrow work, so I didn't code.
+# On this day I was in for a training of social entrepreneurship with Building Tomorrow.
