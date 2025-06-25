@@ -11,19 +11,19 @@
 
 <body>
     <div id="header">
-        <span class="logo"> Social Website</span>
+        <span class="logo"> Lesson Planning</span>
 
         {% if request.user.is_authenticated %}
 
         <ul class="menu">
-            <li {% if section == 'dashboard' %} class="selected" {% endif %}>
+            <li {% if section  == 'dashboard' %} class="selected" {% endif %}>
                 <a href="{% url 'dashboard' %}">My Dashboard</a>
             </li>
             <li {% if section == 'images' %} class="selected" {% endif %}>
-                <a href="#">Images</a>
+                <a href="#">Lesson Plans</a>
             </li>
             <li {% if section == 'people' %} class="selected" {% endif %}>
-                <a href="#">People</a>
+                <a href="#">AI Assistance</a>
             </li>
         </ul>
         {% endif %}
@@ -44,7 +44,7 @@
             <a href="{% url 'login' %}">Login</a>
         </span>
         {% endif %}
-
+        
     </div>
 
     {% if messages %}
