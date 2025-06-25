@@ -97,3 +97,4 @@ def edit(request):
 # On this day, I was caught up with Building Tomorrow work, so I didn't code.
 # On this day I was in for a training of social entrepreneurship with Building Tomorrow.
 # This day too I was in the training of Building Tomorrow.
+# This day too I was preparing for the pitc presentation during the Building Tomorrow Training.
