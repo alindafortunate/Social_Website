@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "edu-plan-uganda.onrender.com",
     "social-website.com",
     "social-website-iafd.onrender.com",
     "localhost",
