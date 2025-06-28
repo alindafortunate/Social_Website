@@ -98,3 +98,4 @@ def edit(request):
 # On this day I was in for a training of social entrepreneurship with Building Tomorrow.
 # This day too I was in the training of Building Tomorrow.
 # This day too I was preparing for the pitc presentation during the Building Tomorrow Training.
+# On this day I was still trying to harmonise the content of Front-End and relaxing.
