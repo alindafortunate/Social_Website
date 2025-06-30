@@ -11,7 +11,7 @@
 
 <body>
     <div id="header">
-        <span class="logo"> Lesson Planning</span>
+        <span class="logo">Social Website</span>
 
         {% if request.user.is_authenticated %}
 
@@ -20,10 +20,10 @@
                 <a href="{% url 'dashboard' %}">My Dashboard</a>
             </li>
             <li {% if section == 'images' %} class="selected" {% endif %}>
-                <a href="#">Lesson Plans</a>
+                <a href="#">images</a>
             </li>
             <li {% if section == 'people' %} class="selected" {% endif %}>
-                <a href="#">AI Assistance</a>
+                <a href="#">people</a>
             </li>
         </ul>
         {% endif %}
