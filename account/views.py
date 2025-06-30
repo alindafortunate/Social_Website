@@ -99,3 +99,5 @@ def edit(request):
 # This day too I was in the training of Building Tomorrow.
 # This day too I was preparing for the pitc presentation during the Building Tomorrow Training.
 # On this day I was still trying to harmonise the content of Front-End and relaxing.
+
+# Returning to Backend Programming.
