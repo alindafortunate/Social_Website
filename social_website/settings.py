@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.staticfiles",
     "social_django",
+    "images",
 ]
 
 MIDDLEWARE = [
