@@ -102,3 +102,4 @@ def edit(request):
 
 # Returning to Backend Programming.
 # On this day I was not feeling well and was preparing for something.
+# On this day I was still not able to program due to some difficulties.
