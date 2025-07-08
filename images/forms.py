@@ -17,3 +17,4 @@ class ImageCreateForm(forms.ModelForm):
                 "The given URL doesn't provided does not much valid image extension."
             )
         return url
+# Today I didn't code.
