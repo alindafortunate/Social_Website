@@ -18,3 +18,4 @@ class ImageCreateForm(forms.ModelForm):
             )
         return url
 # Today I didn't code.
+# Today I didn't code as well.
