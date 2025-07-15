@@ -17,5 +17,7 @@ class ImageCreateForm(forms.ModelForm):
                 "The given URL doesn't provided does not much valid image extension."
             )
         return url
+    def save(self, commit = ...):
+        return super().save(commit)
 # Today I didn't code.
 # Today I didn't code as well.
