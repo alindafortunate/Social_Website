@@ -17,7 +17,11 @@ class ImageCreateForm(forms.ModelForm):
                 "The given URL doesn't provided does not much valid image extension."
             )
         return url
-    def save(self, commit = ...):
+
+    # Today I didn't code.
+    # Today I didn't code as well.
+    def save(self, force_insert=False, force_update=False, commit=True):
+        image = super().save(commit=False)
+        image_url = self.cleaned_data["url"]
+
         return super().save(commit)
-# Today I didn't code.
-# Today I didn't code as well.
