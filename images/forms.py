@@ -25,3 +25,4 @@ class ImageCreateForm(forms.ModelForm):
         image_url = self.cleaned_data["url"]
 
         return super().save(commit)
+    # Today I didn't code I was in field.
