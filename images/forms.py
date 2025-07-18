@@ -10,11 +10,11 @@ class ImageCreateForm(forms.ModelForm):
 
     def clean_url(self):
         url = self.cleaned_data["url"]
-        valid_extensions = ["jpg", "jpeg", "png"]
-        extension = url.rsplit(".", 1)[1].lower()
-        if extension not in valid_extensions:
+        common_extentions = ["jpg", "jpeg", "png"]
+        extention = url.rsplit(".", 1)[1].lower()
+        if extention not in common_extentions:
             raise forms.ValidationError(
-                "The given URL doesn't provided does not much valid image extension."
+                "The given url doesn't much valid image extentions."
             )
         return url
 
@@ -25,5 +25,6 @@ class ImageCreateForm(forms.ModelForm):
         image_url = self.cleaned_data["url"]
 
         return super().save(commit)
+
     # Today I didn't code I was in field.
     # The return to divine instructions.
