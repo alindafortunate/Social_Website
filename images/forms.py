@@ -26,3 +26,4 @@ class ImageCreateForm(forms.ModelForm):
 
         return super().save(commit)
     # Today I didn't code I was in field.
+    # The return to divine instructions.
