@@ -1,6 +1,3 @@
-import requests
-from django.core.files.base import ContentFile
-from django.utils.text import slugify
 from django import forms
 from .models import Image
 
@@ -24,6 +21,8 @@ class ImageCreateForm(forms.ModelForm):
     # Today I didn't code.
     # Today I didn't code as well.
     # force_insert=False, force_update=False,
-    
+    def save(self, force_insert=False, force_update=False, commit=True):
+        return super().save(commit)
+
     # Today I didn't code I was in field.
     # The return to divine instructions.
