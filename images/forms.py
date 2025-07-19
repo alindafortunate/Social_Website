@@ -24,18 +24,6 @@ class ImageCreateForm(forms.ModelForm):
     # Today I didn't code.
     # Today I didn't code as well.
     # force_insert=False, force_update=False,
-    def save(self, force_insert=False, force_update=False, commit=True):
-        image = super().save(commit=False)
-        image_url = self.cleaned_data["url"]
-        extension = image_url.rsplit(".", 1)[1].lower()
-        name = slugify(image.title)
-        image_name = f"{name}.{extension}"
-        # Download the image from the given url.
-        response = requests.get(image_url)
-        image.image.save(image_name, ContentFile(response.content), save=False)
-        if commit:
-            image.save()
-        return image
-
+    
     # Today I didn't code I was in field.
     # The return to divine instructions.
