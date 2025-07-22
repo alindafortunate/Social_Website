@@ -45,6 +45,9 @@
     <button id="btn3">Show all p elements in div2 element</button>
 
     <script>
+        const para = document.createElement('p')
+        para.innerText = "The paragraph was created by the createElement() method."
+        document.body.appendChild(para)
         function getAllParaElems() {
             const allParas = document.getElementsByTagName("p");
             const num = allParas.length;
