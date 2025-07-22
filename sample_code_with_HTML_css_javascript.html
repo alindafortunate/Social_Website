@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Practise For Js</title>
+
     <style>
         body {
             border: solid green 3px;
@@ -45,9 +46,16 @@
     <button id="btn3">Show all p elements in div2 element</button>
 
     <script>
+        // const head = document.getElementsByTagName('head')[0]
+
         const para = document.createElement('p')
         para.innerText = "The paragraph was created by the createElement() method."
+        para.style.color = 'green'
         document.body.appendChild(para)
+
+        let para1 = document.getElementsByTagName('p')[1]
+        para1.style.color = 'red'
+
         function getAllParaElems() {
             const allParas = document.getElementsByTagName("p");
             const num = allParas.length;
