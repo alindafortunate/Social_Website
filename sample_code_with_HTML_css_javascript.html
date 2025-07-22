@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: solid green 3px;
+        }
+
+        #div1 {
+            border: solid blue 3px;
+        }
+
+        #div2 {
+            border: solid red 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Some outer text</p>
+    <p>Some outer text</p>
+
+    <div id="div1">
+        <p>Some div1 text</p>
+        <p>Some div1 text</p>
+        <p>Some div1 text</p>
+
+        <div id="div2">
+            <p>Some div2 text</p>
+            <p>Some div2 text</p>
+        </div>
+    </div>
+
+    <p>Some outer text</p>
+    <p>Some outer text</p>
+
+    <button id="btn1">Show all p elements in document</button>
+    <br />
+    <button id="btn2">Show all p elements in div1 element</button>
+    <br />
+    <button id="btn3">Show all p elements in div2 element</button>
+
+    <script>
+        function getAllParaElems() {
+            const allParas = document.getElementsByTagName("p");
+            const num = allParas.length;
+            alert(`There are ${num} paragraph in this document`);
+        }
+
+        function div1ParaElems() {
+            const div1 = document.getElementById("div1");
+            const div1Paras = div1.getElementsByTagName("p");
+            const num = div1Paras.length;
+            alert(`There are ${num} paragraph in #div1`);
+        }
+
+        function div2ParaElems() {
+            const div2 = document.getElementById("div2");
+            const div2Paras = div2.getElementsByTagName("p");
+            const num = div2Paras.length;
+            alert(`There are ${num} paragraph in #div2`);
+        }
+
+        document.getElementById("btn1").addEventListener("click", getAllParaElems);
+        document.getElementById("btn2").addEventListener("click", div1ParaElems);
+        document.getElementById("btn3").addEventListener("click", div2ParaElems);
+
+    </script>
+</body>
+
+</html>
