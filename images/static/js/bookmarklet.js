@@ -20,3 +20,8 @@ boxHtml = `
         <div class = 'images'></div>
     </div> `;
 body.innerHTML += boxHtml;
+
+function bookmarkletLaunch() {
+    bookmarklet = document.getElementById('bookmarklet');
+
+}
