@@ -34,6 +34,16 @@ function bookmarkletLaunch() {
 
     });
 
+    //find images in the DOM with the minimum dimensions
+    images = document.querySelector('img[src$=".jpg"],img[src$=".jpeg"] img[src$=".png"]');
+    images.forEach(image => {
+        if (image.naturalWidth >= minWidth && image.naturalHeight >= minHeight) {
+            const imageFound = document.createElement('img');
+            imageFound.src = image.src;
+            imagesFound.append(imageFound);
+        }
+    });
 }
+
 //launch the bookmarklet
 bookmarkletLaunch();
