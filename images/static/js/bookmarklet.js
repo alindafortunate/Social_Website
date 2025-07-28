@@ -12,7 +12,7 @@ link.href = styleUrl + '?r=' + Math.floor(Math.random() * 9999999999999999)
 head.appendChild(link)
 
 // load HTML
-
+const body = document.getElementsByTagName('body')[0]
 boxHtml = `
     <div id='bookmarklet'>
         <a href='#' id = 'close'>&times;</a>
