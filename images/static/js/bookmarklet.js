@@ -15,7 +15,7 @@ head.appendChild(link)
 const body = document.getElementsByTagName('body')[0]
 boxHtml = `
     <div id='bookmarklet'>
-        <a href='#' id='close'>&times;</a>
+        <a href='#' id = 'close'>&times;</a>
         <h1>Select an image to bookmark:</h1>
         <div class = 'images'></div>
     </div> `;
