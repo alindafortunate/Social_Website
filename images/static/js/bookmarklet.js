@@ -23,9 +23,11 @@ body.innerHTML += boxHtml;
 
 function bookmarkletLaunch() {
     bookmarklet = document.getElementById('bookmarklet');
-    const imagesFound = bookmarklet.querySelector('.images') // clear images found
-    imagesFound.innerHTML = '' //display bookmarklet
-    bookmarklet.style.display = 'block'
+    const imagesFound = bookmarklet.querySelector('.images')
+    // clear images found
+    imagesFound.innerHTML = '';
+    //display bookmarklet
+    bookmarklet.style.display = 'block';
     //close event
     bookmarklet.querySelector('#close').addEventListener('click', function () {
         bookmarklet.style.display = 'none'
