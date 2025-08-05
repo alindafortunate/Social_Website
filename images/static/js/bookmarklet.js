@@ -47,3 +47,5 @@ function bookmarkletLaunch() {
 
 //launch the bookmarklet
 bookmarkletLaunch();
+
+// AT THIS POINT I AM CONFUSED BUT I KNOW THE LORD WILL SHOW ME THE WAY, FOR I TRUST IN THE LORD AMEN.
