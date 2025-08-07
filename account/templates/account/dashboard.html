@@ -8,7 +8,8 @@
 
 {% with total_images_created=request.user.images_created.count %}
 <p>Your have bookmarked {{total_images_created}} image{{total_images_created|pluralize}}</p>
-{% endwith %}
+{% endwith %}        
+
 <p>Drag the following button to your bookmarks toolbar to bookmark images from other websites → <a
         href="javascrpt:{% include 'bookmarklet_launcher.js'%}" class="button">Bookmark It.</a></p>
 
