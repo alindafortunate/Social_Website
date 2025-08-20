@@ -103,3 +103,5 @@ def edit(request):
 # Returning to Backend Programming.
 # On this day I was not feeling well and was preparing for something.
 # On this day I was still not able to program due to some difficulties.
+
+# On 20th/Aug/2025, I retirned to Software Development after first dropping the ALX Course about Front-End to first read and complete the book about Django (Django-5-By-Example)
