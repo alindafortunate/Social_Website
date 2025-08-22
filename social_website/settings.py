@@ -27,13 +27,12 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "social_website.com",
+    "social_website.test",
     "edu-plan-uganda.onrender.com",
-    "social-website.com",
     "social-website-iafd.onrender.com",
     "localhost",
     "127.0.0.1",
-    "social_website",
-    "socailwebsite.com",
 ]
 
 
@@ -50,6 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "social_django",
     "images",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
