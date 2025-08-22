@@ -27,7 +27,8 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "social_website.com",
+    "mysite.local",
+    "mysite.com",
     "social_website.test",
     "edu-plan-uganda.onrender.com",
     "social-website-iafd.onrender.com",
@@ -187,3 +188,5 @@ SOCIAL_AUTH_PIPELINE = [
     "social_core.pipeline.social_auth.load_extra_data",
     "social_core.pipeline.user.user_details",
 ]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
