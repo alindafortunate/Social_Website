@@ -48,7 +48,7 @@ function bookmarkletLaunch() {
         image.addEventListener('click',function(event){
             imageSelected=event.target;
             bookmarklet.style.display='none';
-            window.open(siteUrl + 'images/create/?url=' + encodeURIComponent(imageSelected.src) + '&title' + encodeURIComponent(document.title),'_blank');
+            window.open(siteUrl + 'images/create/?url=' + encodeURIComponent(imageSelected.src) + '&title=' + encodeURIComponent(document.title), '_blank');
         })
     })
 }
