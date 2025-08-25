@@ -29,7 +29,7 @@ function bookmarkletLaunch() {
     //display bookmarklet
     bookmarklet.style.display = 'block';
     //close event
-    bookmarklet.querySelector('#close').addEventListener('click', function () {
+    bookmarklet.querySelector('#close').addEventListener('click', function() {
         bookmarklet.style.display = 'none'
 
     });

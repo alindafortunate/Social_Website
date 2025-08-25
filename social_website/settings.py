@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "mysite.com",
+    "social_website.com",
     "edu-plan-uganda.onrender.com",
     "social-website-iafd.onrender.com",
     "localhost",
