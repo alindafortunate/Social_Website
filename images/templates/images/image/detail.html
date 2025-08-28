@@ -9,11 +9,17 @@
 {% with total_likes=image.users_like.count users_like=image.users_like.all  %}
 <div class="image-info">
     <div>
-    <span class="count"> <span class="total">{{total_likes}}</span>
+    <span class="count">
+    <span class="total">{{total_likes}}</span>
     like{{total_likes|pluralize}}
     </span>
     <a href="#" data-id="{{image.id}}" data-action="{% if request.user in users_like %}un{% endif %}like" class="like button">
-        {% if request.user not in users_like %}Like{% else %}Unlike{% endif %}</a>
+        {% if request.user not in users_like %}
+        Like
+        {% else %}
+        Unlike
+        {% endif %}
+    </a>
     </div>
     {{image.description|linebreaks}}
 </div>
@@ -38,10 +44,15 @@
     
 {% endblock content %}
 
-    {% block domready %}
-    const url = {% url 'images:like' %};
-    const options = { method:'POST', headers:{'X-CSRFToken':csrftoken}, mode:'same-origin' }
-    document.querySelector('a.like').addEventListener('click', function(e){
+{% block domready %}
+    const url = '{% url 'images:like' %}';
+    const options = { 
+        method: 'POST', 
+        headers: {'X-CSRFToken':csrftoken}, 
+        mode:'same-origin'
+    }
+    document.querySelector('a.like')
+            .addEventListener('click', function(e){
         e.preventDefault();
         const likeButton = this;
 
@@ -66,7 +77,7 @@
                 //update like count
                 const likeCount = document.querySelector('span.count .total');
                 const totalLikes = parseInt(likeCount.innerHTML);
-                likeCount.innerHTML = previousAction === 'like' ? totalLikes + 1 : totalLikes -1 ;
+                likeCount.innerHTML = previousAction === 'like' ? totalLikes + 1 : totalLikes -1;
             }
         })
 

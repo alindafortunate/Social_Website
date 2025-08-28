@@ -63,16 +63,12 @@
     </div>
     
 
-<script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js">
-
-</script>
+<script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 <script>
-    const csrftoken=Cookies.get('csrftoken');
+    const csrftoken = Cookies.get('csrftoken');
     document.addEventListener('DOMContentLoaded', (event) => {
-        //DOM loaded
-        
-        {% block domready %}         
-
+        //DOM loaded        
+        {% block domready %}
         {% endblock domready %}
     })
 </script>
