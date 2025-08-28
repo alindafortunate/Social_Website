@@ -36,6 +36,8 @@
     
 {% endwith %}
     
+{% endblock content %}
+
     {% block domready %}
     const url = {% url 'images:like' %};
     const options = { method:'POST', headers:{'X-CSRFToken':csrftoken}, mode:'same-origin' }
@@ -72,9 +74,5 @@
 
         
     {% endblock domready %}
-        
-    
-    
-{% endblock content %}
     
     
