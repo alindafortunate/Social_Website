@@ -13,9 +13,9 @@
 
 
 {% block domready %}
-var page = 1;
-var emptyPage = false;
-var blockRequest = false;
+let page = 1;
+let emptyPage = false;
+let blockRequest = false;
 window.addEventListener('scroll', function(e){
     const margin = document.body.clientHeight - window.innerHeight - 200;
     if(window.pageYOffset > margin && !emptyPage && !blockRequest){
