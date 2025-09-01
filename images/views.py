@@ -68,12 +68,12 @@ def image_list(request):
         # return an empty page
         if images_only:
             return HttpResponse("")
-        # If page out of range, show the last page. 
+        # If page out of range, show the last page.
         images = paginator.page(paginator.num_pages)
     if images_only:
         return render(
             request,
-            "images/image/list_images.html",
+            "images/image/list_image.html",
             {"section": "images", "images": images},
         )
     return render(

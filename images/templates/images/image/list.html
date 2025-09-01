@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>Images bookmarked</h1>
-<div class="image-list">
+<div id="image-list">
     {% include 'images/image/list_image.html' %}
 
 </div>
@@ -13,19 +13,20 @@
 
 
 {% block domready %}
-const page = 1;
-const emptyPage = false;
-const blockRequest = false;
+var page = 1;
+var emptyPage = false;
+var blockRequest = false;
 window.addEventListener('scroll', function(e){
     const margin = document.body.clientHeight - window.innerHeight - 200;
     if(window.pageYOffset > margin && !emptyPage && !blockRequest){
         blockRequest = true;
-        page +=1
-        fetch('?images_only=1&page' + page)
+        page += 1
+
+        fetch('?images_only=1&page=' + page)
         .then(response => response.text())
         .then(html => {
             if (html === ''){
-                emptyPage =true;
+                emptyPage = true;
             }
             else {
                 const imageList = document.getElementById('image-list');
@@ -35,9 +36,9 @@ window.addEventListener('scroll', function(e){
             }
         })
     }
-})
+});
 // Launch scroll event
-const scrollEvent = newEvent ('scroll');
+const scrollEvent = new Event('scroll');
 window.dispatchEvent(scrollEvent);
 
     
