@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.shortcuts import get_object_or_404, render
+from django.contrib.auth import authenticate, get_user_model, login
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -104,4 +104,21 @@ def edit(request):
 # On this day I was not feeling well and was preparing for something.
 # On this day I was still not able to program due to some difficulties.
 
-# On 20th/Aug/2025, I retirned to Software Development after first dropping the ALX Course about Front-End to first read and complete the book about Django (Django-5-By-Example)
+# On 20th/Aug/2025, I returned to Software Development after first dropping the
+# ALX Course about Front-End to first read and complete the book about Django (Django-5-By-Example)
+
+User = get_user_model()
+
+
+@login_required
+def list_users(request):
+    users = User.objects.filter(is_active=True)
+    return render(request, "account/list.html", {"section": "people", "users": users})
+
+
+@login_required
+def user_detail(request, username):
+    user = get_object_or_404(User, username=username, is_active=True)
+    return render(
+        request, "account/user_detail.html", {"section": "people", "user": user}
+    )
