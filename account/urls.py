@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
-from .views import index, test_view, dashboard, register, edit
+from .views import index, test_view, dashboard, register, edit, list_users, user_detail
 
 urlpatterns = [
     path("home/", index, name="home"),
@@ -42,4 +42,6 @@ urlpatterns = [
     # ),
     path("register/", register, name="register"),
     path("edit/", edit, name="edit"),
+    path("users/", list_users, name="user_list"),
+    path("users/<username>/", user_detail, name="user_detail"),
 ]
