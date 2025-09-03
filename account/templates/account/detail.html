@@ -30,8 +30,47 @@ follower{{total_followers|pluralize}}
 <div id="image-list" class="image-container">
 {% include 'images/image/list_image.html' with images=user.images_created.all %}
 </div>
-{% endwith %}
-    
+{% endwith %}    
     
 {% endblock content %}
+
+
+{% block domready %}
+
+const url ='{% url 'user_follow' %}'
+const options = {
+    method:'POST',
+    headers: {'X-CSRFToken':csrftoken},
+    mode: 'same-origin'
+}
+document.querySelector('a.follow').addEventListener('click', function(e){
+    e.preventDefault();
+    const followButton = this;
+
+    //Add request body
+    const formData = new FormData();
+    formData.append('id', followButton.dataset.action);
+    options['body'] = formData;
+
+    // send HTTP request
+    fetch(url, options)
+    .then(response => response.json())
+    .then(data => { if(data['status'] === 'ok'){
+        const previousAction = followButton.dataset.action;
+
+        //toggle button text and data-action
+        const action = previousAction === 'follow' ? 'Unfollow' : 'follow';
+        followButton.dataset.action = action;
+        followButton.innerHTML = action;
+
+        //update follower count
+        const followerCount = document.querySelector('span.count .total');
+        const totalFollowers = parseInt(followerCount.innerHTML);
+        followerCount.innerHTML = previousAction === 'follow' ? totalFollowers + 1 : totalFollowers -1;
+    }})
+});
+
+    
+{% endblock domready %}
+    
     
