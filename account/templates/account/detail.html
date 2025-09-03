@@ -17,7 +17,7 @@
     <span class="total">
 {{total_followers}} 
     </span>
-follower{{total_followers|pluralize}}
+follower{{total_followers| pluralize}}
 </span>
    <a href="#" data-id="{{user.id}}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button">
 
@@ -38,36 +38,39 @@ follower{{total_followers|pluralize}}
 {% block domready %}
 
 const url ='{% url 'user_follow' %}'
-const options = {
+var options = {
     method:'POST',
     headers: {'X-CSRFToken':csrftoken},
     mode: 'same-origin'
 }
-document.querySelector('a.follow').addEventListener('click', function(e){
+document.querySelector('a.follow')
+        .addEventListener('click', function(e){
     e.preventDefault();
-    const followButton = this;
+    var followButton = this;
 
     //Add request body
-    const formData = new FormData();
+    var formData = new FormData();
     formData.append('id', followButton.dataset.action);
     options['body'] = formData;
 
     // send HTTP request
     fetch(url, options)
     .then(response => response.json())
-    .then(data => { if(data['status'] === 'ok'){
-        const previousAction = followButton.dataset.action;
+    .then(data => { 
+        if(data['status'] === 'ok'){
+        var previousAction = followButton.dataset.action;
 
         //toggle button text and data-action
-        const action = previousAction === 'follow' ? 'Unfollow' : 'follow';
+        var action = previousAction === 'follow' ? 'unfollow' : 'follow';
         followButton.dataset.action = action;
         followButton.innerHTML = action;
 
         //update follower count
-        const followerCount = document.querySelector('span.count .total');
-        const totalFollowers = parseInt(followerCount.innerHTML);
-        followerCount.innerHTML = previousAction === 'follow' ? totalFollowers + 1 : totalFollowers -1;
-    }})
+        var followerCount = document.querySelector('span.count. total');
+        var totalFollowers = parseInt(followerCount.innerHTML);
+        followerCount.innerHTML = previousAction === 'follow' ? totalFollowers + 1 : totalFollowers - 1;
+        }
+    })
 });
 
     
