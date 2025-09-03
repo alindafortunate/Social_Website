@@ -1,7 +1,16 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
-from .views import index, test_view, dashboard, register, edit, list_users, user_detail
+from .views import (
+    index,
+    test_view,
+    dashboard,
+    register,
+    edit,
+    list_users,
+    user_detail,
+    user_follow,
+)
 
 urlpatterns = [
     path("home/", index, name="home"),
@@ -44,4 +53,5 @@ urlpatterns = [
     path("edit/", edit, name="edit"),
     path("users/", list_users, name="user_list"),
     path("users/<username>/", user_detail, name="user_detail"),
+    path("user/follow/", user_follow, name="user_follow"),
 ]
