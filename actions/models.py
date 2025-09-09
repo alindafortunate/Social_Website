@@ -11,6 +11,14 @@ class Action(models.Model):
     )
     verb = models.CharField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
+    target_ct = models.ForeignKey(
+        ContentType,
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="content_obj",
+    )
+    target_id = models.PositiveIntegerField(null=True, blank=True)
 
     class Meta:
         indexes = [
