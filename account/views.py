@@ -4,6 +4,7 @@ from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+from actions.utils import create_action
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Contact, Profile
 
@@ -53,6 +54,7 @@ def register(request):
             # Then save it to the database.
             new_user.save()
             Profile.objects.create(user=new_user)
+            create_action(request.user, "user created an account")
             messages.success(request, "Account creation was successful.")
             return render(request, "account/register_done.html", {"new_user": new_user})
 
