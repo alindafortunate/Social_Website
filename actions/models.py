@@ -15,13 +15,15 @@ class Action(models.Model):
         ContentType,
         blank=True,
         null=True,
-        on_delete=models.CASCADE,
         related_name="content_obj",
+        on_delete=models.CASCADE,
     )
     target_id = models.PositiveIntegerField(null=True, blank=True)
+    target = GenericForeignKey("target_ct", "target_id")
 
     class Meta:
         indexes = [
             models.Index(fields=["-created"]),
+            models.Index(fields=["target_ct", "target_id"]),
         ]
         ordering = ["-created"]
