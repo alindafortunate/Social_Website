@@ -30,7 +30,7 @@
         <div class="info">
             <p>
                 <span class="date">
-                    {{action.created| timesince}} ago
+                    {{action.created|timesince}} ago
                 </span>
                 <a href="{{user.get_absolute_url}}">{{user.first_name}}</a>
                 {{action.verb}}
@@ -40,7 +40,7 @@
                 {% with target=action.target %}
                 <a href="{{target.get_absolute_url}}">{{target}}</a>
                     
-                {% endwith %}                    
+                {% endwith %}                   
                     
                 {% endif %}                    
             </p>
