@@ -23,4 +23,10 @@ Drag the following button to your bookmarks toolbar to bookmark images from othe
     {% csrf_token %}
     <input type="submit" value="Logout">
 </form>
+<h2>What is happening</h2>
+<div class="action-list">
+{% for action in actions %}
+   {% include 'actions/action/detail.html' %} 
+{% endfor %}
+</div>
 {% endblock content %}
