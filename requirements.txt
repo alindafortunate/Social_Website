@@ -8,7 +8,9 @@ cryptography==45.0.6
 defusedxml==0.7.1
 dj-database-url==3.0.0
 Django==5.2.5
+django-debug-toolbar==6.0.0
 django-extensions==4.1
+easy-thumbnails==2.10.1
 gunicorn==23.0.0
 h11==0.16.0
 idna==3.10
