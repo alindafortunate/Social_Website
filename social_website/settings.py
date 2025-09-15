@@ -201,6 +201,7 @@ ABSOLUTE_URL_OVERRIDES = {
 
 INTERNAL_IPS = ["127.0.0.1"]
 # On 15th/Sept/2025, I installed Redis on my WSL2
+# Below are the settings for the Redis server and the database that we are using for this project.
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 0

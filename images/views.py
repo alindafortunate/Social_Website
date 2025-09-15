@@ -8,6 +8,12 @@ from actions.utils import create_action
 
 from .models import Image
 from .forms import ImageCreateForm
+import redis
+from django.conf import settings
+
+r = redis.Redis(
+    host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB
+)
 
 
 @login_required
