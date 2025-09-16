@@ -52,11 +52,11 @@ INSTALLED_APPS = [
     "django_extensions",
     "easy_thumbnails",
     "actions",
-    "debug_toolbar",
+    # "debug_toolbar",
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -199,7 +199,7 @@ ABSOLUTE_URL_OVERRIDES = {
     "auth.user": lambda u: reverse_lazy("user_detail", args=[u.username])
 }
 
-INTERNAL_IPS = ["127.0.0.1"]
+# INTERNAL_IPS = ["127.0.0.1"]
 # On 15th/Sept/2025, I installed Redis on my WSL2
 # Below are the settings for the Redis server and the database that we are using for this project.
 REDIS_HOST = "localhost"
