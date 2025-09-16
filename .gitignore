@@ -4,3 +4,4 @@ __pycache__/
 __init__.py*
 db.sqlite3
 social_website_data.json
+last_social_website_data.json
