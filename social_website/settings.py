@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "social-website-mdb2.onrender.com",
     "mysite.com",
     "socialwebsite.com",
     "edu-plan-uganda.onrender.com",
