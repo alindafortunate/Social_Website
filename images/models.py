@@ -14,7 +14,7 @@ class Image(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, blank=True)
     url = models.URLField(max_length=2000)
-    image = models.ImageField(upload_to="images/%Y/%m/%d/")
+    image = models.ImageField(upload_to="images/%Y/%m/%d/", default="sample image.jpeg")
     description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     users_like = models.ManyToManyField(
